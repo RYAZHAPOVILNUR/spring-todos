@@ -3,14 +3,14 @@ package com.example.demo.user;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
 
-    public String signUpUser(User user) {
+    public User signUpUser(User user) {
         boolean userExists = userRepository.findByEmail(user.getEmail()).isPresent();
 
         if (userExists) {
@@ -19,6 +19,10 @@ public class UserService {
 
         userRepository.save(user);
 
-        return user.toString();
+        return user;
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

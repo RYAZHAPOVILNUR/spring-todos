@@ -1,5 +1,6 @@
 package com.example.demo.registration;
 
+import com.example.demo.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +14,7 @@ public class RegistrationController {
     private final RegistrationService registrationService;
 
     @PostMapping
-    public String register(@RequestBody RegistrationRequest request) {
+    public User register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);
     }
 }

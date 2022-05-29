@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class RegistrationService {
     UserService userService;
 
-    public String register(RegistrationRequest request) {
+    public User register(RegistrationRequest request) {
         // validate email
 
         return userService.signUpUser(
