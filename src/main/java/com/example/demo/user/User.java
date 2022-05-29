@@ -3,7 +3,7 @@ package com.example.demo.user;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Collection;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "users")
@@ -25,6 +25,7 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    @Email(message = "should be an email")
     private String email;
     private String password;
 
