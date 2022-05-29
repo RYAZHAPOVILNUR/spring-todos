@@ -1,6 +1,5 @@
 package com.example.demo.registration;
 
-import com.example.demo.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
